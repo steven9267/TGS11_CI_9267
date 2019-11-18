@@ -36,11 +36,6 @@
                 'rules' => 'required'
                 // valid_email|is_unique[sparepart.email]
             ],
-            [
-                'field' => 'created_at',
-                'label' => 'created_at',
-                'rules' => 'required'
-            ],
             );
         }
             // else{
@@ -85,7 +80,8 @@
        }
         Class SparepartData{
         public $name;
-        public $password;
-        public $email;
+        public $merk;
+        public $amount;
+        public $created_at;
        }
        

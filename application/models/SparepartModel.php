@@ -4,14 +4,14 @@
         {
             private $table = 'sparepart';
             public $id;
-            public $name;
+            public $names;
             public $merk;
             public $amount;
             public $created_at;
             public $rule = [
             [
-            'field' => 'name',
-            'label' => 'name',
+            'field' => 'names',
+            'label' => 'names',
             'rules' => 'required'
             ],
             ];
@@ -20,7 +20,7 @@
             $this->db->get('data_mahasiswa')->result();
         }
         public function store($request) {
-            $this->name = $request->name;
+            $this->names = $request->names;
             $this->merk = $request->merk;
             $this->amount = $request->amount;
             $this->created_at = $request->created_at;
@@ -31,7 +31,7 @@
         return ['msg'=>'Gagal','error'=>true];
         }
         public function update($request,$id) {
-            $updateData = ['name' => $request->name, 'merk' =>$request->merk, 'amount' =>$request->amount, 'created_at' =>$request->created_at];
+            $updateData = ['names' => $request->name, 'merk' =>$request->merk, 'amount' =>$request->amount, 'created_at' =>$request->created_at];
             if($this->db->where('id',$id)->update($this->table, $updateData)){
             return ['msg'=>'Berhasil','error'=>false];
         }
